@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: jx-boot
+spec:
+  template:
+    spec:
+      containers:
+      - name: boot
+        image: ghcr.io/jenkins-x/jx-boot:latest
+        command: ["/jx/boot"]
+      restartPolicy: Never
